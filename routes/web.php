@@ -3,6 +3,10 @@
 use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewusersController;
+use App\Http\Controllers\userlistController;
+use App\Http\Controllers\testdataController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +22,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified'])->name('profile');
+
+Route::get('/user_list', [userlistController::class, 'index'])->middleware(['auth', 'verified'])->name('user_list');
+
+Route::get('/new_user', [NewusersController::class, 'index'])->middleware(['auth', 'verified'])->name('new_users');
+Route::post('/new_user', [NewusersController::class, 'store'])->middleware(['auth', 'verified'])->name('new_users');
+
+Route::get('/test_data', [testdataController::class, 'index'])->middleware(['auth', 'verified'])->name('test_data');
 
 Route::get('/error', function () {
     abort(500);
