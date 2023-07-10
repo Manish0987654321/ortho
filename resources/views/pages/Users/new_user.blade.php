@@ -9,6 +9,17 @@
 		</h3>
 	</div>
 	<!--begin::Form-->
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css" rel="stylesheet">
+	</head>
+	<body>
+		
+	
 	<form action="new_user" method="post">
 		@csrf
 		<div class="card-body ">
@@ -30,7 +41,7 @@
 				</div>
 				<div class="col-lg-6 m-form__group-sub">
 					<label>Phone  <span class="text-danger">*</span></label>
-					<input type="tel" class="form-control m-input" name="phone" placeholder="Enter Phone" required>
+					<input type="number" class="form-control m-input" name="phone" placeholder="Enter Phone" required>
 				</div>
 			</div>
 
@@ -52,7 +63,7 @@
 				</div>
 				<div class="col-lg-6 m-form__group-sub">
 					<label>Patient Support Number</label>
-					<input type="tel" class="form-control m-input" name="patientsupportnumber" placeholder="Enter Patient Support Number">
+					<input type="t" class="form-control m-input" name="patientsupportnumber" placeholder="Enter Patient Support Number">
 				</div>
 			</div>
 
@@ -67,12 +78,18 @@
 			</div>
 
 			<div class="form-group row mb-10">
-				<label class="col-form-label text-right col-lg-3 col-sm-12">State Colors</label>
+				<label class="col-form-label col-lg-3 col-sm-12">Enable Mail for Patients?</label>
 				<div class="col-lg-9 col-md-9 col-sm-12">
-					<input data-switch="true" type="checkbox"  checked="checked" data-on-color="success" data-off-color="warning"/>
-					<input data-switch="true" type="checkbox" checked="checked" data-on-color="primary"/>
-					<input data-switch="true" type="checkbox" checked="checked" data-on-color="danger"/>
-					<input data-switch="true" type="checkbox" checked="checked" data-on-color="info"/>
+					<input type="checkbox" data-toggle="switchbutton" checked data-onlabel="Enable" data-offlabel="Disable">
+					{{-- <input type="checkbox" data-toggle="switchbutton" checked data-onstyle="outline-success" data-offstyle="outline-danger"  checked data-onlabel="Activate" data-offlabel="Disactivate"> --}}
+				</div>
+			</div>
+
+			<div class="form-group row mb-10">
+				<label class="col-form-label col-lg-3 col-sm-12">Status</label>
+				<div class="col-lg-9 col-md-9 col-sm-12">
+					<input type="checkbox" data-toggle="switchbutton" checked data-onlabel="Activate" data-offlabel="Disactivate">
+					{{-- <input type="checkbox" data-toggle="switchbutton" checked data-onstyle="outline-success" data-offstyle="outline-danger"  checked data-onlabel="Activate" data-offlabel="Disactivate"> --}}
 				</div>
 			</div>
 
@@ -84,32 +101,13 @@
 		</div>
 	</form>
 	<!--end::Form-->
-</div>
+	<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/dist/bootstrap-switch-button.min.js"></script>
+</body>
+</html>
+	
 </x-default-layout>
 
 
 
 
 
-{{-- 
-// Class definition
-
-var KTBootstrapSwitch = function() {
-
-// Private functions
-var demos = function() {
-	// minimum setup
-	$('[data-switch=true]').bootstrapSwitch();
-};
-
-return {
-	// public functions
-	init: function() {
-	demos();
-	},
-};
-}();
-
-jQuery(document).ready(function() {
-KTBootstrapSwitch.init();
-}); --}}
