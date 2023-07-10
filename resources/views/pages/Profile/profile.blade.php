@@ -1,4 +1,4 @@
-<x-default-layout></x-default-layout>
+<x-default-layout>
 <div class="m-subheader ">
 <div class="d-flex align-items-center">
 <div class="mr-auto">
